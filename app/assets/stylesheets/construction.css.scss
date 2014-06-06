@@ -1,3 +1,142 @@
-// Place all the styles related to the construction controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+// Business colors
+$mwMain: #e92c1f;
+$mwAccent: #b22718;
+$mwDark: #241f1f;
+$mwLight: white;
+
+@font-face {
+  font-family: 'MisoRegular';
+  src: font-url('miso-webfont.eot');
+  src: font-url('miso-webfont.eot?#iefix') format('embedded-opentype'),
+  url('miso-webfont.woff') format('woff'),
+  url('miso-webfont.ttf') format('truetype'),
+  url('miso-webfont.svg#MisoRegular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'MisoBold';
+  src: font-url('miso-bold-webfont.eot');
+  src: font-url('miso-bold-webfont.eot?#iefix') format('embedded-opentype'),
+  url('miso-bold-webfont.woff') format('woff'),
+  url('miso-bold-webfont.ttf') format('truetype'),
+  url('miso-bold-webfont.svg#MisoBold') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.sp-container {
+  width: 900px;
+  height: 400px;
+  position: relative;
+  margin: 80px auto 0px auto;
+}
+
+.sp-container h2 {
+  color: $mwDark;
+  text-shadow: 0px 0px 1px rgba(36, 31, 31, 0.9);
+}
+
+.sp-container .sp-right h2 {
+  color: $mwLight;
+  text-shadow: 0px 0px 1px rgba(255, 255, 255, 0.9);
+}
+
+.sp-content {
+  width: 100%;
+  height: 400px;
+  position: relative;
+  animation:
+    open 0.4s linear forwards,
+    squeeze 0.6s linear 5.5s forwards;
+}
+
+.sp-content:after {
+  content: '';
+  width: 4px;
+  background: $mwDark;
+  height: 100%;
+  position: absolute;
+  left: 50%;
+}
+
+.sp-wrap {
+  width: 400px;
+  padding: 0px 25px;
+  height: 100%;
+  text-align: right;
+  font-size: 70px;
+  line-height: 80px;
+  float: left;
+  position: relative;
+  background: $mwMain;
+  overflow: hidden;
+}
+
+.sp-wrap span {
+  display: block;
+  background: $mwMain;
+  opacity: 0;
+}
+
+.sp-wrap span.sp-mid {
+  opacity: 1;
+}
+
+.sp-wrap span.sp-mid {
+  font-family: 'MisoBold';
+  text-transform: uppercase;
+  font-size: 160px;
+  line-height: 130px;
+  position: relative;
+}
+
+.sp-left span.sp-top {
+  animation:
+    slideLeft 0.5s ease-in 0.6s backwards,
+    fadeOut 1s linear 4.4s backwards;
+}
+
+.sp-right span.sp-mid {
+  animation:
+    slideRight 0.5s ease-in 2.4s backwards,
+    moveUp 0.6s linear 5s forwards;
+}
+
+.sp-right span.sp-bottom {
+  animation:
+    slideRight 0.5s ease-in 3.2s backwards,
+    fadeOut 1s linear 4.6s backwards;
+}
+
+.sp-full {
+  position: absolute;
+  font-size: 67px;
+  top: 142px;
+  width: 700px;
+  left: 145px;
+  animation: fadeIn 1s linear 6.6s backwards;
+}
+
+.sp-full a {
+  background: $mwDark;
+  color: $mwLight;
+  border-radius: 4px;
+  padding: 10px 40px;
+  display: inline-block;
+  font-size: 40px;
+  margin-top: 40px;
+  animation: zoomIn 0.7s ease-in-out 7s backwards;
+}
+
+.sp-full a:hover {
+  opacity: 0.8;
+}
+
+.sp-full h2 {
+  width: 400px;
+  padding: 0px 50px 0px 0px;
+  float: left;
+  text-align: right;
+}

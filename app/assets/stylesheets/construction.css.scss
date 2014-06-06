@@ -28,6 +28,8 @@ $mwLight: white;
 
 body {
   background-color: $mwMain;
+  font-family: 'MisoRegular';
+  font-size: 15px;
 }
 
 .sp-container {
@@ -51,9 +53,8 @@ body {
   width: 100%;
   height: 400px;
   position: relative;
-  animation:
-    open 0.4s linear forwards,
-    squeeze 0.6s linear 5.5s forwards;
+  -webkit-animation: open 0.4s linear forwards, squeeze 0.6s linear 5.5s forwards;
+  animation: open 0.4s linear forwards, squeeze 0.6s linear 5.5s forwards;
 }
 
 .sp-content:after {
@@ -67,11 +68,11 @@ body {
 
 .sp-wrap {
   width: 400px;
-  padding: 0px 25px;
+  padding: 50px 25px;
   height: 100%;
   text-align: right;
-  font-size: 70px;
-  line-height: 80px;
+  font-size: 50px;
+  line-height: 60px;
   float: left;
   position: relative;
   background: $mwMain;
@@ -91,27 +92,24 @@ body {
 .sp-wrap span.sp-mid {
   font-family: 'MisoBold';
   text-transform: uppercase;
-  font-size: 160px;
-  line-height: 130px;
+  font-size: 110px;
+  line-height: 80px;
   position: relative;
 }
 
 .sp-left span.sp-top {
-  animation:
-    slideLeft 0.5s ease-in 0.6s backwards,
-    fadeOut 1s linear 4s backwards;
+  -webkit-animation: slideLeft 0.5s ease-in 0.6s backwards, fadeOut 1s linear 4s backwards;
+  animation: slideLeft 0.5s ease-in 0.6s backwards, fadeOut 1s linear 4s backwards;
 }
 
 .sp-left span.sp-mid {
-  animation:
-    slideLeft 0.5s ease-in 1s backwards,
-    moveUp 0.6s linear 5s forwards;
+  -webkit-animation: slideLeft 0.5s ease-in 1s backwards, moveUp 0.6s linear 5s forwards;
+  animation: slideLeft 0.5s ease-in 1s backwards, moveUp 0.6s linear 5s forwards;
 }
 
 .sp-left span.sp-bottom {
-  animation:
-    slideLeft 0.5s ease-in 1.4s backwards,
-    fadeOut 1s linear 4.2s backwards;
+  -webkit-animation: slideLeft 0.5s ease-in 1.4s backwards, fadeOut 1s linear 4.2s backwards;
+  animation: slideLeft 0.5s ease-in 1.4s backwards, fadeOut 1s linear 4.2s backwards;
 }
 
 .sp-right span {
@@ -119,29 +117,27 @@ body {
 }
 
 .sp-right span.sp-top {
-  animation:
-    slideRight 0.5s ease-in 2s backwards,
-    fadeOut 1s linear 4.4s backwards;
+  -webkit-animation: slideRight 0.5s ease-in 2s backwards, fadeOut 1s linear 4.4s backwards;
+  animation: slideRight 0.5s ease-in 2s backwards, fadeOut 1s linear 4.4s backwards;
 }
 
 .sp-right span.sp-mid {
-  animation:
-    slideRight 0.5s ease-in 2.4s backwards,
-    moveUp 0.6s linear 5s forwards;
+  -webkit-animation: slideRight 0.5s ease-in 2.4s backwards, moveUp 0.6s linear 5s forwards;
+  animation: slideRight 0.5s ease-in 2.4s backwards, moveUp 0.6s linear 5s forwards;
 }
 
 .sp-right span.sp-bottom {
-  animation:
-    slideRight 0.5s ease-in 3.2s backwards,
-    fadeOut 1s linear 4.6s backwards;
+  -webkit-animation: slideRight 0.5s ease-in 3.2s backwards, fadeOut 1s linear 4.6s backwards;
+  animation: slideRight 0.5s ease-in 3.2s backwards, fadeOut 1s linear 4.6s backwards;
 }
 
 .sp-full {
   position: absolute;
-  font-size: 67px;
+  font-size: 40px;
   top: 142px;
   width: 700px;
   left: 145px;
+  -webkit-animation: fadeIn 1s linear 6.6s backwards;
   animation: fadeIn 1s linear 6.6s backwards;
 }
 
@@ -153,6 +149,7 @@ body {
   display: inline-block;
   font-size: 40px;
   margin-top: 40px;
+  -webkit-animation: zoomIn 0.7s ease-in-out 7s backwards;
   animation: zoomIn 0.7s ease-in-out 7s backwards;
 }
 
@@ -167,6 +164,15 @@ body {
   text-align: right;
 }
 
+@-webkit-keyframes open {
+  0% {
+    transform: scale(1, 0);
+  }
+  100% {
+    transform: scale(1, 1);
+  }
+}
+
 @keyframes open {
   0% {
     transform: scale(1, 0);
@@ -176,12 +182,30 @@ body {
   }
 }
 
+@-webkit-keyframes squeeze {
+  0% {
+    height: 400px;
+  }
+  100% {
+    height: 200px;
+  }
+}
+
 @keyframes squeeze {
   0% {
     height: 400px;
   }
   100% {
-    height: 120px;
+    height: 200px;
+  }
+}
+
+@-webkit-keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
   }
 }
 
@@ -194,6 +218,15 @@ body {
   }
 }
 
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 @keyframes fadeIn {
   0% {
     opacity: 0;
@@ -203,9 +236,27 @@ body {
   }
 }
 
+@-webkit-keyframes slideLeft {
+  0% {
+    transform: translateX(120%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
 @keyframes slideLeft {
   0% {
     transform: translateX(120%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+@-webkit-keyframes slideRight {
+  0% {
+    transform: translateX(-120%);
   }
   100% {
     transform: translateX(0%);
@@ -221,12 +272,30 @@ body {
   }
 }
 
+@-webkit-keyframes moveUp {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-170px);
+  }
+}
+
 @keyframes moveUp {
   0% {
     transform: translateY(0px);
   }
   100% {
     transform: translateY(-170px);
+  }
+}
+
+@-webkit-keyframes zoomIn {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
   }
 }
 
